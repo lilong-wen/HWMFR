@@ -1,3 +1,6 @@
-./data/train/*
-./data/test/*
+data/train/*
+data/test/*
+data/off_image_test/*
+data/off_image_train/*
 *.pkl
+*.pyc
