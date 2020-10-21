@@ -10,9 +10,9 @@ configs:
      ...
 '''
 
-train_datasets=['./data/offline-train.pkl','./data/train_label.txt']
-valid_datasets=['./data/offline-test.pkl', './data/test_label.txt']
-dictionaries=['./data/dictionary.txt']
+train_datasets=['./data/official_data/train.pkl','./data/official_data/train_label.txt']
+valid_datasets=['./data/official_data/test.pkl', './data/official_data/test_label.txt']
+dictionaries=['./data/official_data/dictionary.txt']
 batch_Imagesize=500000
 valid_batch_Imagesize=500000
 # batch_size for training and testing
@@ -28,6 +28,7 @@ hidden_size = 256
 teacher_forcing_ratio = 1
 # change the gpu id
 gpu = [0,1]
+# gpu = None
 # learning rate
 lr_rate = 0.0001
 # flag to remember when to change the learning rate
@@ -35,4 +36,4 @@ flag = 0
 # exprate
 exprate = 0
 # pre-trained encoder
-pre_trained_pthfile = r'densenet121-a639ec97.pth'
+pre_trained_pthfile = r'./models/densenet121-a639ec97.pth'
