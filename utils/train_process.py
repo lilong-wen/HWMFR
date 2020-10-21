@@ -1,4 +1,9 @@
 import torch
+import random
+from config import teacher_forcing_ratio, batch_size
+
+import sys
+sys.path.append("../")
 
 def train_process(target_length,
                   attn_decoder1,

@@ -1,9 +1,13 @@
 import torch
 
-# collate_fn is writting for padding imgs in batch.
-# As images in my dataset are different size, so the padding is necessary.
 # Padding images to the max image size in a mini-batch and cat a mask.
 def custom_collate_fn(batch):
+    '''
+    print("here print origin batch size")
+    print(len(batch))
+    print(len(batch[0]))
+    print(batch[0][0].shape)
+    '''
     batch.sort(key=lambda x: len(x[1]), reverse=True)
     img, label = zip(*batch)
     aa1 = 0
@@ -49,5 +53,10 @@ def custom_collate_fn(batch):
         k1 = k1+1
 
     img_padding_mask = img_padding_mask/255.0
+    '''
+    print("here print returned padded image shape")
     print(img_padding_mask.shape)
+    print("here print returned padded label shape")
+    print(label_padding.shape)
+    '''
     return img_padding_mask, label_padding
